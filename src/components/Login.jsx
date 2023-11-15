@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 function Login() {
   const [novo, setNovo] = useState({
@@ -9,7 +9,7 @@ function Login() {
     senha: "",
   });
   const [error, setError] = useState("");
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -29,16 +29,6 @@ function Login() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    fetch(`http://localhost:5173/login/${id ? id : ""}`, {
-      method: metodo,
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(novo),
-    }).then(() => {
-      window.location = "/";
-    });
-
     if (!novo.nome || !novo.email) {
       setError("Por favor, preencha todos os campos");
       return;
@@ -47,12 +37,20 @@ function Login() {
     sessionStorage.setItem("name", novo.nome);
     sessionStorage.setItem("email", novo.email);
 
-    history.push("/home");
+    navigate("/home")
+
+    fetch(`http://localhost:5173/home/${id ? id : ""}`, {
+      method: metodo,
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(novo),
+    });
   };
 
   useEffect(() => {
     if (id) {
-      fetch(`http://localhost:5173/login/${id}`)
+      fetch(`http://localhost:5173/home/${id}`)
         .then((resp) => {
           return resp.json();
         })

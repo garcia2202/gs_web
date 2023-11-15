@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+
+//variaveis
+$fonte: 'Lato', sans-serif;
+$titulo: 'Pacifico', cursive;
+$cor-primaria: #FFFBF5;
+$cor-secundaria: #F7EFE5;
+$cor-terciaria: #C3ACD0;
+$cor-quaternaria: #7743DB;
+
+//estilos
+.nav_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $cor-primaria;
+  padding: 0 2rem;
+  height: 10vh;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  color: $cor-quaternaria;
+  font-family: $titulo;
+  font-size: 30px;
+
+  .button_logout{
+    background-color: $cor-quaternaria;
+    color: $cor-primaria;
+    border: none;
+    border-radius: 5px;
+    padding: 0.3rem 1rem;
+    font-size: 1rem;
+    font-family: $fonte;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+
+    &:hover {
+      background-color: $cor-terciaria;
+      color: $cor-secundaria;
+    }
+  }
+}
