@@ -1,1 +1,11 @@
-/*# sourceMappingURL=footer.css.map */
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #FFFBF5;
+  padding: 20px;
+  font-family: "Lato", sans-serif;
+  font-size: 1.2rem;
+}/*# sourceMappingURL=footer.css.map */

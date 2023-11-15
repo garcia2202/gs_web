@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+//variaveis
+$fonte: 'Lato', sans-serif;
+$cor-primaria: #FFFBF5;
+$cor-secundaria: #F7EFE5;
+$cor-terciaria: #C3ACD0;
+$cor-quaternaria: #7743DB;
+
+//estilos
+footer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: $cor-primaria;
+  padding: 20px;
+  font-family: $fonte;
+  font-size: 1.2rem;
+}
