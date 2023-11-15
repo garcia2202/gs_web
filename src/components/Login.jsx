@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import "../css/Login/login.css";
 
 function Login() {
   const [novo, setNovo] = useState({
@@ -37,7 +38,7 @@ function Login() {
     sessionStorage.setItem("name", novo.nome);
     sessionStorage.setItem("email", novo.email);
 
-    navigate("/home")
+    navigate("/home");
 
     fetch(`http://localhost:5173/home/${id ? id : ""}`, {
       method: metodo,
@@ -62,38 +63,42 @@ function Login() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="name">Nome:</label>
-        <input
-          type="text"
-          id="name"
-          name="nome"
-          value={novo.nome}
-          onChange={handleChange}
-        />
+      <div className="login_container">
+        <div className="login">
+          <div>
+            <label htmlFor="name">Nome:</label>
+            <input
+              type="text"
+              id="name"
+              name="nome"
+              value={novo.nome}
+              onChange={handleChange}
+            />
+          </div>
+          <div>
+            <label htmlFor="email">Email:</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              value={novo.email}
+              onChange={handleChange}
+            />
+          </div>
+          <div>
+            <label htmlFor="password">Senha:</label>
+            <input
+              type="password"
+              id="password"
+              name="senha"
+              value={novo.senha || ""}
+              onChange={handleChange}
+            />
+          </div>
+          {error && <p>{error}</p>}
+          <button type="submit">Login</button>
+        </div>
       </div>
-      <div>
-        <label htmlFor="email">Email:</label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          value={novo.email}
-          onChange={handleChange}
-        />
-      </div>
-      <div>
-        <label htmlFor="password">Senha:</label>
-        <input
-          type="password"
-          id="password"
-          name="senha"
-          value={novo.senha || ""}
-          onChange={handleChange}
-        />
-      </div>
-      {error && <p>{error}</p>}
-      <button type="submit">Login</button>
     </form>
   );
 }

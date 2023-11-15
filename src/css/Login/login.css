@@ -1,1 +1,44 @@
-/*# sourceMappingURL=login.css.map */
+.login_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  flex-wrap: wrap;
+  background-color: #FFFBF5;
+  border-radius: 10px;
+}
+.login_container div {
+  margin-bottom: 1rem;
+}
+.login_container label {
+  margin-right: 0.5rem;
+  font-family: "Lato", sans-serif;
+}
+.login_container input {
+  width: 100%;
+  margin-top: 0.5rem;
+  border-radius: 5px;
+  border: 1px solid #C3ACD0;
+  padding: 0.5rem;
+  font-family: "Lato", sans-serif;
+}
+.login_container button {
+  width: 100%;
+  margin-top: 2rem;
+  border-radius: 5px;
+  border: 1px solid #7743DB;
+  padding: 0.5rem;
+  font-family: "Lato", sans-serif;
+  background-color: #7743DB;
+  color: #FFFBF5;
+  font-weight: bold;
+  cursor: pointer;
+}
+.login_container button:hover {
+  background-color: #C3ACD0;
+  color: #F7EFE5;
+}
+
+.login {
+  width: 20%;
+}/*# sourceMappingURL=login.css.map */

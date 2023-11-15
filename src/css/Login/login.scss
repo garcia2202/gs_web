@@ -1,0 +1,58 @@
+//variaveis
+$fonte: 'Lato', sans-serif;
+$cor-primaria: #FFFBF5;
+$cor-secundaria: #F7EFE5;
+$cor-terciaria: #C3ACD0;
+$cor-quaternaria: #7743DB;
+
+//estilos
+
+.login_container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  flex-wrap: wrap;
+  background-color: $cor-primaria;
+  border-radius: 10px;
+
+  div{
+    margin-bottom: 1rem;
+  }
+
+  label{
+    margin-right: 0.5rem;
+    font-family: $fonte;
+  }
+
+  input{
+    width: 100%;
+    margin-top: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid $cor-terciaria;
+    padding: 0.5rem;
+    font-family: $fonte;
+  }
+
+  button{
+    width: 100%;
+    margin-top: 2rem;
+    border-radius: 5px;
+    border: 1px solid $cor-quaternaria;
+    padding: 0.5rem;
+    font-family: $fonte;
+    background-color: $cor-quaternaria;
+    color: $cor-primaria;
+    font-weight: bold;
+    cursor: pointer;
+
+    &:hover{
+      background-color: $cor-terciaria;
+      color: $cor-secundaria;
+    }
+  }
+}
+
+.login{
+  width: 20%;
+}
