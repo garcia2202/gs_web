@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+// variaveis
+$fonte: 'Lato', sans-serif;
+$titulo: 'Pacifico', cursive;
+$cor-primaria: #FFFBF5;
+$cor-secundaria: #F7EFE5;
+$cor-terciaria: #C3ACD0;
+$cor-quaternaria: #7743DB;
+
+// estilos
+body,
+html {
+  height: 100%;
+  width: 100%;
+  font-family: $fonte;
+  background-color: $cor-primaria;
+  margin: 0;
+  padding: 0;
+}
+
+
+.img_aside {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  margin-bottom: 0;
+}
+
+.wrap {
+  grid-column: 2;
+  padding: 1rem;
+  margin-bottom: 0;
+}
+
+.img_pilula1 {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.5rem;
+
+  .pilula-1 {
+    margin: 1rem;
+    margin-bottom: 0.5rem;
+    width: 90%;
+    height: 65%;
+    background-color: $cor-secundaria;
+    border-radius: 1rem;
+    box-shadow: 0 0 0.9rem 0.3rem $cor-terciaria;
+  }
+}
+
+aside {
+  max-height: 90%;
+  overflow-y: auto;
+
+  p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $cor-terciaria;
+    border-radius: 5px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: $cor-secundaria;
+    border-radius: 5px;
+  }
+}
+
+hr {
+  border-color: $cor-quaternaria;
+  margin: 1rem 0;
+}
+
+h1 {
+  font-size: 30px;
+  color: $cor-quaternaria;
+  margin-bottom: 1rem;
+}
+
+.vantagens{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+  margin-top: 1rem;
+}
+
+.cards{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  max-width: 30%;
+  padding: 1rem;
+  gap: 30px; 
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column; 
+  }
+
+  .img_aside {
+    grid-template-columns: 1fr; 
+    margin-bottom: 1rem;
+  }
+
+  .wrap {
+    grid-column: auto; 
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .img_pilula1 {
+    flex-direction: column; 
+
+    .pilula-1 {
+      width: 100%; 
+      height: auto; 
+    }
+  }
+
+  .cards {
+    flex-direction: column; 
+    max-width: 100%; 
+    padding: 1rem;
+    gap: 10px; 
+  }
+  
+  .topics {
+    max-width: 100%;
+  }
+}

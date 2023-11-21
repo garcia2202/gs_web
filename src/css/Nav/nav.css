@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Courgette&family=Pacifico&display=swap");
 .nav_container {
   display: flex;
   flex-direction: row;
@@ -11,7 +11,7 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   width: 100%;
   color: #7743DB;
-  font-family: "Pacifico", cursive;
+  font-family: "Courgette", cursive;
   font-size: 30px;
 }
 .nav_container .button_logout {
