@@ -43,3 +43,10 @@ $cor-quaternaria: #7743DB;
     }
   }
 }
+
+.dados{
+  display: flex;
+  font-family: $fonte;
+  color: $cor-quaternaria;
+  gap: 35px;
+}

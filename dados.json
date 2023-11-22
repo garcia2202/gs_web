@@ -1,9 +1,8 @@
-{
-  "dados": [
-    {
-      "nome": "",
-      "email": "",
-      "id": 1
-    }
-  ]
-}
+[
+  {
+    "id": 1,
+    "nome": "professor",
+    "email": "admin@admin",
+    "senha": "1234"
+  }
+]

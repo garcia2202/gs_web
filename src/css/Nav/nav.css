@@ -29,4 +29,11 @@
 .nav_container .button_logout:hover {
   background-color: #C3ACD0;
   color: #F7EFE5;
+}
+
+.dados {
+  display: flex;
+  font-family: "Lato", sans-serif;
+  color: #7743DB;
+  gap: 35px;
 }/*# sourceMappingURL=nav.css.map */

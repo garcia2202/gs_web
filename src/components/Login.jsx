@@ -1,6 +1,7 @@
-import { useEffect, useState } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "../css/Login/login.css";
+import dados from '../../dados.json'
 
 function Login() {
   const [novo, setNovo] = useState({
@@ -20,46 +21,33 @@ function Login() {
     }));
   };
 
-  let { id } = useParams();
+  const autenticarUsuario = () => {
+    const user = dados.find(
+      (u) => u.email === novo.email && u.senha === novo.senha
+    );
 
-  let metodo = "post";
-  if (id) {
-    metodo = "put";
-  }
+    return user;
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (!novo.nome || !novo.email) {
+    if (!novo.nome || !novo.email || !novo.senha) {
       setError("Por favor, preencha todos os campos");
       return;
     }
 
-    sessionStorage.setItem("name", novo.nome);
-    sessionStorage.setItem("email", novo.email);
+    const authenticatedUser = autenticarUsuario();
 
-    navigate("/home");
-
-    fetch(`http://localhost:5173/home/${id ? id : ""}`, {
-      method: metodo,
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(novo),
-    });
-  };
-
-  useEffect(() => {
-    if (id) {
-      fetch(`http://localhost:5173/home/${id}`)
-        .then((resp) => {
-          return resp.json();
-        })
-        .then((data) => {
-          setNovo(data);
-        });
+    if (authenticatedUser) {
+      sessionStorage.setItem("name", authenticatedUser.nome);
+      sessionStorage.setItem("email", authenticatedUser.email);
+      navigate("/home");
+    } else {
+      setError("Credenciais inválidas. Por favor, verifique seus dados de login.");
     }
-  }, [id]);
+  };
+    
 
   return (
     <form onSubmit={handleSubmit}>
