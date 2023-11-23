@@ -1,7 +1,14 @@
-import {} from "react";
+import { useState,useEffect } from "react";
 import "../css/Nav/nav.css";
 
 function Nav() {
+  const [name, setName] = useState(sessionStorage.getItem("name"));
+  const [email, setEmail] = useState(sessionStorage.getItem("email"));
+
+  useEffect(() => {
+    setName(sessionStorage.getItem("name"));
+    setEmail(sessionStorage.getItem("email"));
+  }, []);
 
   const handleLogout = () => {
     sessionStorage.clear();
@@ -12,8 +19,8 @@ function Nav() {
       <nav className="nav_container">
         <h1>Tech Pill</h1>
         <div className="dados">
-          <p>{sessionStorage.getItem("name")}</p>
-          <p>{sessionStorage.getItem("email")}</p>
+          <p>{name}</p>
+          <p>{email}</p>
         </div>
         <div>
           <button className="button_logout" onClick={handleLogout}>Logout</button>
